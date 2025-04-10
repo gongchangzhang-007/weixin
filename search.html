@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>订单查询</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .search-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 300px;
+      }
+      .search-container h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+      .search-container input[type="text"] {
+        width: calc(100% - 20px); /* 减去左右内边距 */
+        padding: 10px;
+        margin: 0 10px 10px 10px; /* 左右边距各 10px */
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        box-sizing: border-box; /* 确保内边距和边框包含在宽度内 */
+      }
+      .search-container button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .search-container button:hover {
+        background-color: #0056b3;
+      }
+      .search-container .message {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #e53e3e; /* 红色提示信息 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search-container">
+      <h1>订单查询</h1>
+      <input type="text" id="email" placeholder="请输入下单的电子邮箱地址" />
+      <button onclick="searchOrder()">查询</button>
+      <div id="message" class="message"></div>
+      <!-- 提示信息显示区域 -->
+    </div>
+
+    <script>
+      function searchOrder() {
+        // 获取用户输入的邮箱地址
+        var email = document.getElementById("email").value.trim();
+        var messageElement = document.getElementById("message");
+
+        // 清空之前的提示信息
+        messageElement.textContent = "";
+
+        // 检查是否输入了内容
+        if (email === "") {
+          messageElement.textContent = "请输入有效的电子邮箱地址";
+          return;
+        }
+
+        // 验证邮箱格式
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          messageElement.textContent = "请输入正确的邮箱地址";
+          return;
+        }
+
+        // 模拟查询逻辑，这里直接提示未查询到订单
+        messageElement.textContent = "当前账号未查询到订单";
+      }
+    </script>
+  </body>
+</html>

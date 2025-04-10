@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <head>
+    <meta charset="UTF-8" />
+    <title>代理注册-实名微信出售-购买VX稳定账号-自动发货平台</title>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"
+    />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="../../public/static/css/font.css" />
+    <link rel="stylesheet" href="../../public/static/css/xadmin.css" />
+    <script src="../../public/static/layui/layui.js" charset="utf-8"></script>
+    <script
+      type="text/javascript"
+      src="../../public/static/js/xadmin.js"
+    ></script>
+    <link rel="stylesheet" href="../../public/static/layui/css/layui.css" />
+  </head>
+  <body class="login-bg">
+    <div class="login">
+      <blockquote class="layui-elem-quote">
+        注册代理账户需要付费666.00元，付费成功后会自动开通账号，默认密码与用户名相同，请登录后尽快修改
+      </blockquote>
+      <form method="get" class="layui-form" onsubmit="return validateForm()">
+        <input
+          name="username"
+          placeholder="用户名"
+          type="text"
+          lay-verify="required"
+          class="layui-input"
+          id="username"
+        />
+        <hr class="hr15" />
+        <!-- 修正 input 标签的语法错误 -->
+        <input
+          name="qq"
+          lay-verify="required"
+          placeholder="QQ"
+          type="text"
+          class="layui-input"
+          id="qq"
+        />
+        <hr class="hr15" />
+        <div class="layui-form-item" style="text-align: center">
+          <input
+            type="radio"
+            name="paytype"
+            value="1"
+            title="支付宝"
+            checked=""
+          />
+          <input type="radio" name="paytype" value="2" title="QQ钱包" />
+          <input type="radio" name="paytype" value="3" title="微信" />
+        </div>
+        <input
+          value="确认注册"
+          lay-submit
+          lay-filter="login"
+          style="width: 100%"
+          type="submit"
+        />
+        <hr class="hr20" />
+        <a
+          class="layui-btn layui-btn-lg layui-btn-danger"
+          style="width: 100%"
+          href="login.html"
+          >返回登录</a
+        >
+        <hr class="hr20" />
+      </form>
+    </div>
+    <script>
+      layui.use("form", function () {
+        var form = layui.form;
+        form.render();
+      });
+
+      function validateForm() {
+        var username = document.getElementById("username").value;
+        var qq = document.getElementById("qq").value;
+
+        if (username.trim() === "" || qq.trim() === "") {
+          alert("用户名和QQ号不能为空");
+          return false;
+        }
+        // 跳转到另一个页面，这里用 target_page.html 占位，你可以根据实际情况修改
+        window.location.href = "../../trade/pay-dl.php";
+        return false; // 阻止表单默认提交行为
+      }
+    </script>
+  </body>
+</html>
